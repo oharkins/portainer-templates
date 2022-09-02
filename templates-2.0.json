@@ -1371,6 +1371,411 @@
 			}
 			],
 			"restart_policy": "unless-stopped"
+		},
+		{
+			"type": 1,
+			"title": "Deluge",
+			"name": "Deluge",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/deluge/config<br>mkdir -p /volume1/docker/deluge/downloads</p>",
+			"description": "[Deluge](http://deluge-torrent.org/) is a lightweight, Free Software, cross-platform BitTorrent client. * Full Encryption * WebUI * Plugin System * Much more...",
+			"categories": [
+				"File Management"
+			],
+			"platform": "linux",
+			"logo": "https://avatars2.githubusercontent.com/u/6733935?v=3&s=200",
+			"image": "linuxserver/deluge:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				},
+				{
+					"name": "DELUGE_LOGLEVEL",
+					"label": "DELUGE_LOGLEVEL",
+					"default": "error",
+					"description": "set the loglevel output when running Deluge, default is info for deluged and warning for delgued-web"
+				}
+			],
+			"ports": [
+				"8112:8112/tcp",
+				"6881:6881/tcp",
+				"6881:6881/udp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/deluge/config"
+			},
+			{
+				"container": "/downloads",
+				"bind": "/volume1/docker/deluge/downloads"
+			}
+			],
+			"restart_policy": "unless-stopped"
+		},
+		{
+			"type": 1,
+			"title": "Domoticz",
+			"name": "Domoticz",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/domoticz/config</p>",
+			"description": "[Domoticz](https://www.domoticz.com) is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device.",
+			"categories": [
+				"Automation"
+			],
+			"platform": "linux",
+			"logo": "https://github.com/domoticz/domoticz/raw/master/www/images/logo.png",
+			"image": "linuxserver/domoticz:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				},
+				{
+					"name": "WEBROOT",
+					"label": "WEBROOT",
+					"default": "domoticz",
+					"description": "Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying."
+				},
+				{
+					"name": "DBASE",
+					"label": "DBASE",
+					"default": "<path to database>",
+					"description": "Sets path to database. Do not set unless you know what this does."
+				}
+			],
+			"ports": [
+				"8080:8080/tcp",
+				"6144:6144/tcp",
+				"1443:1443/tcp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/domoticz/config"
+			}
+			],
+			"restart_policy": "unless-stopped"
+		},
+		{
+			"type": 1,
+			"title": "Homeassistant",
+			"name": "Homeassistant",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/homeassistant/config</p>",
+			"description": "[Home Assistant Core](https://www.home-assistant.io/) - Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
+			"categories": [
+				"Home Automation"
+			],
+			"platform": "linux",
+			"logo": "https://github.com/home-assistant/home-assistant.io/raw/next/source/images/favicon-192x192-full.png",
+			"image": "linuxserver/homeassistant:latest",
+			"network": "host",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				}
+			],
+			"ports": [
+				"8123:8123/tcp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/homeassistant/config"
+			}
+			],
+			"restart_policy": "unless-stopped"
+		},
+		{
+			"type": 1,
+			"title": "Lidarr",
+			"name": "Lidarr",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/lidarr/config<br>mkdir -p /volume1/docker/lidarr/music<br>mkdir -p /volume1/docker/lidarr/downloads</p>",
+			"description": "[Lidarr](https://github.com/lidarr/Lidarr) is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+			"platform": "linux",
+			"logo": "https://github.com/lidarr/Lidarr/raw/develop/Logo/400.png",
+			"image": "linuxserver/lidarr:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				}
+			],
+			"ports": [
+				"8686:8686/tcp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/lidarr/config"
+			},
+			{
+				"container": "/music",
+				"bind": "/volume1/docker/lidarr/music"
+			},
+			{
+				"container": "/downloads",
+				"bind": "/volume1/docker/lidarr/downloads"
+			}
+			],
+			"restart_policy": "unless-stopped"
+		},
+		{
+			"type": 1,
+			"title": "Nzbget",
+			"name": "Nzbget",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nzbget/config<br>mkdir -p /volume1/docker/nzbget/downloads</p>",
+			"description": "[Nzbget](http://nzbget.net/) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.",
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nzbget-banner.png",
+			"image": "linuxserver/nzbget:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				},
+				{
+					"name": "NZBGET_USER",
+					"label": "NZBGET_USER",
+					"default": "nzbget",
+					"description": "Specify the user for web authentication."
+				},
+				{
+					"name": "NZBGET_PASS",
+					"label": "NZBGET_PASS",
+					"default": "tegbzn6789",
+					"description": "Specify the password for web authentication."
+				}
+			],
+			"ports": [
+				"6789:6789/tcp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/nzbget/config"
+			},
+			{
+				"container": "/downloads",
+				"bind": "/volume1/docker/nzbget/downloads"
+			}
+			],
+			"restart_policy": "unless-stopped"
+		},
+		{
+			"type": 1,
+			"title": "Ombi",
+			"name": "Ombi",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ombi/config</p>",
+			"description": "[Ombi](https://ombi.io) allows you to host your own Plex Request and user management system. If you are sharing your Plex server with other users, allow them to request new content using an easy to manage interface! Manage all your requests for Movies and TV with ease, leave notes for the user and get notification when a user requests something. Allow your users to post issues against their requests so you know there is a problem with the audio etc. Even automatically send them weekly newsletters of new content that has been added to your Plex server!",
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ombi.png",
+			"image": "linuxserver/ombi:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				},
+				{
+					"name": "BASE_URL",
+					"label": "BASE_URL",
+					"default": "/ombi",
+					"description": "Subfolder can optionally be defined as an env variable for reverse proxies. Keep in mind that once this value is defined, the gui setting for base url no longer works. To use the gui setting, remove this env variable."
+				}
+			],
+			"ports": [
+				"3579:3579/tcp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/ombi/config"
+			}
+			],
+			"restart_policy": "unless-stopped"
+		},
+		{
+			"type": 1,
+			"title": "Radarr",
+			"name": "Radarr",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/radarr/config<br>mkdir -p /volume1/docker/radarr/movies<br>mkdir -p /volume1/docker/radarr/downloads</p>",
+			"description": "[Radarr](https://github.com/Radarr/Radarr) - A fork of Sonarr to work with movies à la Couchpotato.",
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/radarr.png",
+			"image": "linuxserver/radarr:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				}
+			],
+			"ports": [
+				"7878:7878/tcp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/radarr/config"
+			},
+			{
+				"container": "/movies",
+				"bind": "/volume1/docker/radarr/movies"
+			},
+			{
+				"container": "/downloads",
+				"bind": "/volume1/docker/radarr/downloads"
+			}
+			],
+			"restart_policy": "unless-stopped"
+		},
+		{
+			"type": 1,
+			"title": "Sonarr",
+			"name": "Sonarr",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/sonarr/config<br>mkdir -p /volume1/docker/sonarr/tv<br>mkdir -p /volume1/docker/sonarr/downloads</p>",
+			"description": "[Sonarr](https://sonarr.tv/) (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+			"categories": [
+				"Media"
+			],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sonarr-banner.png",
+			"image": "linuxserver/sonarr:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				}
+			],
+			"ports": [
+				"8989:8989/tcp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/sonarr/config"
+			},
+			{
+				"container": "/tv",
+				"bind": "/volume1/docker/sonarr/tv"
+			},
+			{
+				"container": "/downloads",
+				"bind": "/volume1/docker/sonarr/downloads"
+			}
+			],
+			"restart_policy": "unless-stopped"
 		}
   ]
 }
