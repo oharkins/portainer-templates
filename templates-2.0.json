@@ -1049,6 +1049,7 @@
       "note": "The UniFi Controller is a wireless network management software solution from Ubiquiti Networks™. It allows you to manage multiple wireless networks using a web browser.",
       "categories": ["network", "infrastructure"],
       "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/liveswitch.png",
       "repository": {
         "url": "https://github.com/oharkins/portainer-templates",
         "stackfile": "stacks/unifi-ap/docker-stack.yml"
