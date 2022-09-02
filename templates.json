@@ -1049,7 +1049,7 @@
         "categories": ["metrics", "time-series", "monitoring"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/telegraf/docker-stack.yml"
         },
         "env": [
@@ -1083,7 +1083,7 @@
         "categories": ["metrics", "database", "time-series", "monitoring"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/grafana/docker-stack.yml"
         },
         "env": [
@@ -1137,7 +1137,7 @@
         "categories": ["metrics", "database", "time-series", "monitoring"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/influxdb/docker-stack.yml"
         },
         "env": [
@@ -1221,7 +1221,7 @@
         "categories": ["network", "dns"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/nsd/docker-stack.yml"
         },
         "env": [
@@ -1270,7 +1270,7 @@
         "categories": ["network", "dns"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/unbound/docker-stack.yml"
         },
         "env": [
@@ -1309,7 +1309,7 @@
         "categories": ["network", "infrastructure"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/unifi-ap/docker-stack.yml"
         },
         "env": [
@@ -1328,7 +1328,7 @@
         "categories": ["docker"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/portainer/docker-stack.yml"
         },
         "env": [
@@ -1347,7 +1347,7 @@
         "categories": ["docker"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/scheduler/docker-stack.yml"
         }
       },
@@ -1359,7 +1359,7 @@
         "categories": ["docker"],
         "platform": "linux",
         "repository": {
-          "url": "https://github.com/oharkins/portainer-templates",
+          "url": "https://github.com/uip9av6y/portainer-templates",
           "stackfile": "stacks/watchtower/docker-stack.yml"
         },
         "env": [
