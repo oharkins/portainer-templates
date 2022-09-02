@@ -1050,8 +1050,8 @@
       "categories": ["metrics", "time-series", "monitoring"],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "telegraf/docker-stack.yml"
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/telegraf/docker-stack.yml"
       },
       "env": [
         {
@@ -1084,8 +1084,8 @@
       "categories": ["metrics", "database", "time-series", "monitoring"],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "grafana/docker-stack.yml"
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/grafana/docker-stack.yml"
       },
       "env": [
         {
@@ -1138,8 +1138,8 @@
       "categories": ["metrics", "database", "time-series", "monitoring"],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "influxdb/docker-stack.yml"
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/influxdb/docker-stack.yml"
       },
       "env": [
         {
@@ -1216,63 +1216,14 @@
     },
     {
       "type": 2,
-      "title": "NSD",
-      "description": "NLnet Labs Name Server Daemon",
-      "note": "The NLnet Labs Name Server Daemon (NSD) is an authoritative DNS name server. It has been developed for operations in environments where speed, reliability, stability and security are of high importance.",
-      "categories": ["network", "dns"],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "nsd/docker-stack.yml"
-      },
-      "env": [
-        {
-          "name": "DNS_PORT",
-          "label": "DNS Port",
-          "description": "Exposed port for DNS queries."
-        },
-        {
-          "name": "CONFIG_REPO",
-          "label": "Config repository URL",
-          "description": "URL pointing to the git repository containing NSD configuration."
-        },
-        {
-          "name": "CONFIG_BRANCH",
-          "label": "Config repository branch",
-          "description": "Repository branch."
-        },
-        {
-          "name": "ZONES_REPO",
-          "label": "Zones repository URL",
-          "description": "URL pointing to the git repository containing Bind9 zonefiles."
-        },
-        {
-          "name": "ZONES_BRANCH",
-          "label": "Zones repository branch",
-          "description": "Repository branch."
-        },
-        {
-          "name": "GIT_USER",
-          "label": "Git User",
-          "description": "Username to authenticate against the remote repositories."
-        },
-        {
-          "name": "GIT_KEY",
-          "label": "Docker secret name",
-          "description": "Docker secret name containing the SSH key for git repository access."
-        }
-      ]
-    },
-    {
-      "type": 2,
       "title": "Unbound",
       "description": "Unbound DNS resolver",
       "note": "Unbound is a validating, recursive, and caching DNS resolver.",
       "categories": ["network", "dns"],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "unbound/docker-stack.yml"
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/unbound/docker-stack.yml"
       },
       "env": [
         {
@@ -1310,8 +1261,8 @@
       "categories": ["network", "infrastructure"],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "unifi-ap/docker-stack.yml"
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/unifi-ap/docker-stack.yml"
       },
       "env": [
         {
@@ -1323,33 +1274,14 @@
     },
     {
       "type": 2,
-      "title": "Portainer",
-      "description": "Simple management UI for Docker",
-      "note": "Portainer is a lightweight management UI which allows you to easily manage your different Docker environments (Docker hosts or Swarm clusters).",
-      "categories": ["docker"],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "portainer/docker-stack.yml"
-      },
-      "env": [
-        {
-          "name": "TEMPLATES_URI",
-          "label": "Manifest URI",
-          "description": "Location of the templates manifest."
-        }
-      ]
-    },
-    {
-      "type": 2,
       "title": "Container Crontab",
       "description": "Simple cron runner for containers",
       "note": "A microservice that will perform actions on a Docker container based on cron schedule.",
       "categories": ["docker"],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "scheduler/docker-stack.yml"
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/scheduler/docker-stack.yml"
       }
     },
     {
@@ -1360,8 +1292,8 @@
       "categories": ["docker"],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/uip9av6y/portainer-templates",
-        "stackfile": "watchtower/docker-stack.yml"
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/watchtower/docker-stack.yml"
       },
       "env": [
         {
