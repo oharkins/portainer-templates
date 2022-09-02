@@ -407,7 +407,7 @@
       ]
     },
     {
-      "type": 3,
+      "type": 2,
       "title": "n8n",
       "description": "The workflow automation platform that doesn't box you in, that you never outgrow",
       "categories": ["workflow"],
