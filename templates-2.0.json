@@ -407,6 +407,24 @@
       ]
     },
     {
+      "type": 2,
+      "title": "n8n",
+      "description": "The workflow automation platform that doesn't box you in, that you never outgrow",
+      "categories": ["workflow"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/redis.png",
+      "repository": {
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/n8n/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "REDIS_PASSWD",
+          "label": "Redis password"
+        }
+      ]
+    },
+    {
       "type": 1,
       "title": "RabbitMQ",
       "description": "Highly reliable enterprise messaging system",
