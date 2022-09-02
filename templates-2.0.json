@@ -1302,6 +1302,75 @@
           "description": "Activity schedule for watchtower to perform upgrades."
         }
       ]
-    }
+    },
+    {
+			"type": 1,
+			"title": "Cloud9",
+			"name": "Cloud9",
+			"note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/cloud9/config<br>mkdir -p /volume1/docker/cloud9/code<br></p>",
+			"description": "[Cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with terminal access. This container is for running their core SDK locally and developing plugins.",
+			"categories": [
+				"Development"
+			],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cloud9.png",
+			"image": "linuxserver/cloud9:latest",
+			"env": [
+				{
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1024",
+					"description": "for UserID"
+				},
+				{
+					"name": "PGID",
+					"label": "PGID",
+					"default": "100",
+					"description": "for GroupID"
+				},
+				{
+					"name": "TZ",
+					"label": "TZ",
+					"default": "Europe/Amsterdam",
+					"description": "Specify a timezone to use for example Europe/Amsterdam"
+				},
+				{
+					"name": "GITURL",
+					"label": "GITURL",
+					"default": "https://github.com/linuxserver/docker-cloud9.git",
+					"description": "Specify a git repo to checkout on first startup"
+				},
+				{
+					"name": "USERNAME",
+					"label": "USERNAME",
+					"default": "",
+					"description": "Optionally specify a username for http auth"
+				},
+				{
+					"name": "PASSWORD",
+					"label": "PASSWORD",
+					"default": "",
+					"description": "Optionally specify a password for http auth (if USERNAME and PASSWORD are not set, there will be no http auth)"
+				}
+			],
+			"ports": [
+				"8000:8000/tcp"
+			],
+			"volumes": [
+			{
+				"container": "/config",
+				"bind": "/volume1/docker/cloud9/config"
+			},
+			{
+				"container": "/code",
+				"bind": "/volume1/docker/cloud9/code"
+			},
+			{
+				"container": "/var/run/docker.sock",
+				"bind": "/var/run/docker.sock"
+			}
+			],
+			"restart_policy": "unless-stopped"
+		}
   ]
 }
