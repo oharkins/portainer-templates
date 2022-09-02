@@ -1044,21 +1044,330 @@
     },
     {
       "type": 2,
+      "title": "Telegraf",
+      "description": "Telegraf is an agent for collecting metrics and writing them to InfluxDB or other outputs.",
+      "note": "Telegraf is an open source agent written in Go for collecting metrics and data on the system it's running on or from other services. Telegraf writes data it collects to InfluxDB in the correct format.",
+      "categories": ["metrics", "time-series", "monitoring"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "telegraf/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "CONFIG_REPO",
+          "label": "Config repository URL",
+          "description": "URL pointing to the git repository containing configuration data."
+        },
+        {
+          "name": "CONFIG_BRANCH",
+          "label": "Config repository branch",
+          "description": "Repository branch."
+        },
+        {
+          "name": "GIT_USER",
+          "label": "Git User",
+          "description": "Username to authenticate against the remote repositories."
+        },
+        {
+          "name": "GIT_KEY",
+          "label": "Docker secret name",
+          "description": "Docker secret name containing the SSH key for git repository access."
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Grafana",
+      "description": "The analytics platform for all your metrics",
+      "note": "Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored.",
+      "categories": ["metrics", "database", "time-series", "monitoring"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "grafana/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "GRAFANA_PORT",
+          "label": "HTTP Port",
+          "description": "Exposed port of the web interface."
+        },
+        {
+          "name": "ADMIN_USER",
+          "label": "Admin user name",
+          "description": "The name of the admin user to be created."
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "label": "Admin user password",
+          "description": "The password for the admin user configured with ADMIN_USER."
+        },
+        {
+          "name": "PERSISTENCE_PASSWORD",
+          "label": "Persistence backend password",
+          "description": "The password for the persistence backend storage."
+        },
+        {
+          "name": "CONFIG_REPO",
+          "label": "Config repository URL",
+          "description": "URL pointing to the git repository containing configuration data."
+        },
+        {
+          "name": "CONFIG_BRANCH",
+          "label": "Config repository branch",
+          "description": "Repository branch."
+        },
+        {
+          "name": "GIT_USER",
+          "label": "Git User",
+          "description": "Username to authenticate against the remote repositories."
+        },
+        {
+          "name": "GIT_KEY",
+          "label": "Docker secret name",
+          "description": "Docker secret name containing the SSH key for git repository access."
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "InfluxDB",
+      "description": "Scalable datastore for metrics, events, and real-time analytics",
+      "note": "InfluxDB is an open source time series database with no external dependencies. It's useful for recording metrics, events, and performing analytics.",
+      "categories": ["metrics", "database", "time-series", "monitoring"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "influxdb/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "INFLUX_PORT",
+          "label": "HTTP Port",
+          "description": "Exposed port of the HTTP API."
+        },
+        {
+          "name": "INFLUXDB_DB",
+          "label": "Database name",
+          "description": "Automatically initializes a database with the name of this environment variable."
+        },
+        {
+          "name": "INFLUXDB_ADMIN_USER",
+          "label": "Admin user name",
+          "description": "The name of the admin user to be created. If this is unset, no admin user is created."
+        },
+        {
+          "name": "INFLUXDB_ADMIN_PASSWORD",
+          "label": "Admin user password",
+          "description": "The password for the admin user configured with INFLUXDB_ADMIN_USER. If this is unset, a random password is generated and printed to standard out."
+        },
+        {
+          "name": "INFLUXDB_USER",
+          "label": "Database user name",
+          "description": "The name of a user to be created with no privileges. If INFLUXDB_DB is set, this user will be granted read and write permissions for that database."
+        },
+        {
+          "name": "INFLUXDB_USER_PASSWORD",
+          "label": "Database user password",
+          "description": "The password for the user configured with INFLUXDB_USER. If this is unset, a random password is generated and printed to standard out."
+        },
+        {
+          "name": "INFLUXDB_READ_USER",
+          "label": "Read-Only user name",
+          "description": "The name of a user to be created with read privileges on INFLUXDB_DB. If INFLUXDB_DB is not set, this user will have no granted permissions."
+        },
+        {
+          "name": "INFLUXDB_READ_USER_PASSWORD",
+          "label": "Read-Only user password",
+          "description": "The password for the user configured with INFLUXDB_READ_USER. If this is unset, a random password is generated and printed to standard out."
+        },
+        {
+          "name": "INFLUXDB_WRITE_USER",
+          "label": "Write-enabled user name",
+          "description": "The name of a user to be created with write privileges on INFLUXDB_DB. If INFLUXDB_DB is not set, this user will have no granted permissions."
+        },
+        {
+          "name": "INFLUXDB_WRITE_USER_PASSWORD",
+          "label": "Write-enabled user password",
+          "description": "The password for the user configured with INFLUXDB_WRITE_USER. If this is unset, a random password is generated and printed to standard out."
+        },
+        {
+          "name": "CONFIG_REPO",
+          "label": "Repository URL",
+          "description": "URL pointing to the git repository containing configuration data."
+        },
+        {
+          "name": "CONFIG_BRANCH",
+          "label": "Repository branch",
+          "description": "Repository branch."
+        },
+        {
+          "name": "GIT_USER",
+          "label": "Git User",
+          "description": "Username to authenticate against the remote repository."
+        },
+        {
+          "name": "GIT_KEY",
+          "label": "Docker secret name",
+          "description": "Docker secret name containing the SSH key for git repository access."
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "NSD",
+      "description": "NLnet Labs Name Server Daemon",
+      "note": "The NLnet Labs Name Server Daemon (NSD) is an authoritative DNS name server. It has been developed for operations in environments where speed, reliability, stability and security are of high importance.",
+      "categories": ["network", "dns"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "nsd/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "DNS_PORT",
+          "label": "DNS Port",
+          "description": "Exposed port for DNS queries."
+        },
+        {
+          "name": "CONFIG_REPO",
+          "label": "Config repository URL",
+          "description": "URL pointing to the git repository containing NSD configuration."
+        },
+        {
+          "name": "CONFIG_BRANCH",
+          "label": "Config repository branch",
+          "description": "Repository branch."
+        },
+        {
+          "name": "ZONES_REPO",
+          "label": "Zones repository URL",
+          "description": "URL pointing to the git repository containing Bind9 zonefiles."
+        },
+        {
+          "name": "ZONES_BRANCH",
+          "label": "Zones repository branch",
+          "description": "Repository branch."
+        },
+        {
+          "name": "GIT_USER",
+          "label": "Git User",
+          "description": "Username to authenticate against the remote repositories."
+        },
+        {
+          "name": "GIT_KEY",
+          "label": "Docker secret name",
+          "description": "Docker secret name containing the SSH key for git repository access."
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Unbound",
+      "description": "Unbound DNS resolver",
+      "note": "Unbound is a validating, recursive, and caching DNS resolver.",
+      "categories": ["network", "dns"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "unbound/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "DNS_PORT",
+          "label": "DNS Port",
+          "description": "Exposed port for DNS queries."
+        },
+        {
+          "name": "CONFIG_REPO",
+          "label": "Repository URL",
+          "description": "URL pointing to the git repository containing Unbound configuration."
+        },
+        {
+          "name": "CONFIG_BRANCH",
+          "label": "Repository branch",
+          "description": "Repository branch."
+        },
+        {
+          "name": "GIT_USER",
+          "label": "Git User",
+          "description": "Username to authenticate against the remote repository."
+        },
+        {
+          "name": "GIT_KEY",
+          "label": "Docker secret name",
+          "description": "Docker secret name containing the SSH key for git repository access."
+        }
+      ]
+    },
+    {
+      "type": 2,
       "title": "Unifi Controller",
       "description": "Unifi Access Point controller",
       "note": "The UniFi Controller is a wireless network management software solution from Ubiquiti Networks™. It allows you to manage multiple wireless networks using a web browser.",
       "categories": ["network", "infrastructure"],
       "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/liveswitch.png",
       "repository": {
-        "url": "https://github.com/oharkins/portainer-templates",
-        "stackfile": "stacks/unifi-ap/docker-stack.yml"
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "unifi-ap/docker-stack.yml"
       },
       "env": [
         {
           "name": "SYSTEM_IP",
           "label": "Public address",
           "description": "Public address for communication with devices."
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Portainer",
+      "description": "Simple management UI for Docker",
+      "note": "Portainer is a lightweight management UI which allows you to easily manage your different Docker environments (Docker hosts or Swarm clusters).",
+      "categories": ["docker"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "portainer/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "TEMPLATES_URI",
+          "label": "Manifest URI",
+          "description": "Location of the templates manifest."
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "Container Crontab",
+      "description": "Simple cron runner for containers",
+      "note": "A microservice that will perform actions on a Docker container based on cron schedule.",
+      "categories": ["docker"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "scheduler/docker-stack.yml"
+      }
+    },
+    {
+      "type": 2,
+      "title": "Watchtower",
+      "description": "Automatically update running Docker containers",
+      "note": "Watches your containers and automatically restarts them whenever their image is refreshed. ",
+      "categories": ["docker"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/uip9av6y/portainer-templates",
+        "stackfile": "watchtower/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "CRON_SCHEDULE",
+          "label": "Cron schedule",
+          "description": "Activity schedule for watchtower to perform upgrades."
         }
       ]
     }
