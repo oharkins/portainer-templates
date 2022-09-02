@@ -1041,6 +1041,25 @@
           "label": "Postgres password"
         }
       ]
+    },
+    {
+      "type": 2,
+      "title": "Unifi Controller",
+      "description": "Unifi Access Point controller",
+      "note": "The UniFi Controller is a wireless network management software solution from Ubiquiti Networks™. It allows you to manage multiple wireless networks using a web browser.",
+      "categories": ["network", "infrastructure"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/oharkins/portainer-templates",
+        "stackfile": "stacks/unifi-ap/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "SYSTEM_IP",
+          "label": "Public address",
+          "description": "Public address for communication with devices."
+        }
+      ]
     }
   ]
 }
