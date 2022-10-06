@@ -1237,7 +1237,7 @@
          ]
       },
       {
-         "type":2,
+         "type":1,
          "title":"Telegraf",
          "description":"Telegraf is an agent for collecting metrics and writing them to InfluxDB or other outputs.",
          "note":"Telegraf is an open source agent written in Go for collecting metrics and data on the system it's running on or from other services. Telegraf writes data it collects to InfluxDB in the correct format.",
@@ -1275,7 +1275,7 @@
          ]
       },
       {
-         "type":2,
+         "type":1,
          "title":"Grafana",
          "description":"The analytics platform for all your metrics",
          "note":"Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored.",
@@ -1334,7 +1334,7 @@
          ]
       },
       {
-         "type":2,
+         "type":1,
          "title":"InfluxDB",
          "description":"Scalable datastore for metrics, events, and real-time analytics",
          "note":"InfluxDB is an open source time series database with no external dependencies. It's useful for recording metrics, events, and performing analytics.",
