@@ -43,7 +43,7 @@
                "name": "N8N_ENCRYPTION_KEY",
                "label": "N8N_ENCRYPTION_KEY",
                "default": "<SET_A_LONG_RANDOM_STRING>",
-               "preset": true
+               "preset": false
             },
             {
                "name": "N8N_RUNNERS_ENABLED",
