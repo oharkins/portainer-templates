@@ -12,7 +12,7 @@
     "categories": ["Tools"],
     "ports": ["5678/tcp"],
     "volumes": [
-      { "container": "/home/node/.n8n", "bind": "/home/oharkins/n8n" },
+      { "container": "/home/node/.n8n", "volume": "n8n_data" },
       { "container": "/etc/localtime", "bind": "/etc/localtime", "readonly": true }
     ],
     "env": [
