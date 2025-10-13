@@ -2,6 +2,89 @@
    "version":"2",
    "templates":[
       {
+      "id": 24,
+      "type": 1,
+      "name": "n8n",
+      "title": "n8n",
+      "description": "n8n allows you to build flexible workflows focused on deep data integration.",
+      "logo": "https://mediadepot.github.io/templates/img/n8n.png",
+      "image": "docker.n8n.io/n8nio/n8n:latest",
+      "categories": [
+        "Networkother",
+        "Tools"
+      ],
+      "ports": [
+        "5678/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/home/node/.n8n"
+        },
+        {
+          "container": "/etc/localtime",
+          "bind": "/etc/localtime",
+          "readonly": true
+        }
+      ],
+      "env": [
+        {
+          "name": "GENERIC_TIMEZONE",
+          "label": "GENERIC_TIMEZONE",
+          "default": "America/Denver",
+          "preset": true
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Denver",
+          "preset": true
+        },
+        {
+          "name": "EXECUTIONS_DATA_PRUNE",
+          "label": "EXECUTIONS_DATA_PRUNE",
+          "default": "true",
+          "preset": false
+        },
+        {
+          "name": "EXECUTIONS_DATA_MAX_AGE",
+          "label": "EXECUTIONS_DATA_MAX_AGE",
+          "default": "24",
+          "preset": false
+        },
+        {
+          "name": "EXECUTIONS_DATA_SAVE_ON_SUCCESS",
+          "label": "EXECUTIONS_DATA_SAVE_ON_SUCCESS",
+          "default": "none",
+          "preset": false
+        },
+        {
+          "name": "WEBHOOK_URL",
+          "label": "WEBHOOK_URL",
+          "default": "http://your-droplet-ip:5678",
+          "preset": false
+        }
+      ],
+      "labels": [
+        {
+          "name": "traefik.enable",
+          "value": "true"
+        },
+        {
+          "name": "traefik.http.services.n8n.loadbalancer.server.port",
+          "value": "5678"
+        },
+        {
+          "name": "traefik.http.routers.n8n.entrypoints",
+          "value": "websecure"
+        },
+        {
+          "name": "traefik.http.routers.n8n.tls.certresolver",
+          "value": "mydnschallenge"
+        }
+      ],
+      "maintainer": " https://github.com/mediadepot/templates/"
+    },
+      {
          "type":1,
          "title":"Registry",
          "description":"Docker image registry",
