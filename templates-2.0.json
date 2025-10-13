@@ -18,7 +18,9 @@
       ],
       "volumes": [
         {
-          "container": "/home/node/.n8n"
+          "container": "/home/node/.n8n",
+          "bind": "/home/oharkins/n8n"
+
         },
         {
           "container": "/etc/localtime",
@@ -62,7 +64,20 @@
           "label": "WEBHOOK_URL",
           "default": "http://your-droplet-ip:5678",
           "preset": false
+        },
+        {
+          "name": "N8N_RUNNERS_ENABLED",
+          "label": "N8N_RUNNERS_ENABLED",
+          "default": "true",
+          "preset": true
+        },
+        {
+          "name": "DB_SQLITE_POOL_SIZE",
+          "label": "DB_SQLITE_POOL_SIZE",
+          "default": "5",
+          "preset": false
         }
+        
       ],
       "labels": [
         {
