@@ -31,13 +31,13 @@
           "name": "GENERIC_TIMEZONE",
           "label": "GENERIC_TIMEZONE",
           "default": "America/Denver",
-          "preset": true
+          "preset": false
         },
         {
           "name": "TZ",
           "label": "TZ",
           "default": "America/Denver",
-          "preset": true
+          "preset": false
         },
         {
           "name": "EXECUTIONS_DATA_PRUNE",
