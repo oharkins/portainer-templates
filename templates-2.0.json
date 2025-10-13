@@ -16,7 +16,7 @@
       { "container": "/etc/localtime", "bind": "/etc/localtime", "readonly": true }
     ],
     "env": [
-      { "name": "TZ", "label": "TZ", "default": "America/Detroit", "preset": false },
+      { "name": "TZ", "label": "TZ", "default": "America/Denver", "preset": true },
 
       { "name": "WEBHOOK_URL", "label": "WEBHOOK_URL", "default": "https://n8n.lab.harkinstech.com", "preset": false },
 
