@@ -20,7 +20,7 @@
 
       { "name": "WEBHOOK_URL", "label": "WEBHOOK_URL", "default": "https://n8n.lab.harkinstech.com", "preset": false },
 
-      { "name": "N8N_ENCRYPTION_KEY", "label": "N8N_ENCRYPTION_KEY", "default": "<SET_A_LONG_RANDOM_STRING>", "preset": true },
+      { "name": "N8N_ENCRYPTION_KEY", "label": "N8N_ENCRYPTION_KEY", "default": "<SET_A_LONG_RANDOM_STRING>", "preset": false },
       { "name": "N8N_RUNNERS_ENABLED", "label": "N8N_RUNNERS_ENABLED", "default": "true", "preset": true },
       { "name": "DB_SQLITE_POOL_SIZE", "label": "DB_SQLITE_POOL_SIZE", "default": "5", "preset": false },
 
