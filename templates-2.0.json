@@ -62,7 +62,7 @@
         {
           "name": "WEBHOOK_URL",
           "label": "WEBHOOK_URL",
-          "default": "http://your-droplet-ip:5678",
+          "default": "https://n8n.lab.harkinstech.com",
           "preset": false
         },
         {
