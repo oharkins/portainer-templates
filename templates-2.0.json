@@ -2,6 +2,40 @@
    "version": "2",
    "templates": [
       {
+         "type": 1,
+         "title": "Mosquitto MQTT",
+         "name": "mosquitto",
+         "description": "Eclipse Mosquitto is an open source message broker that implements the MQTT protocol. Mosquitto is lightweight and suitable for use on all devices from low power single board computers to full servers.",
+         "categories": [
+            "IoT",
+            "Messaging",
+            "Tools"
+         ],
+         "platform": "linux",
+         "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/mosquitto.png",
+         "image": "eclipse-mosquitto:latest",
+         "ports": [
+            "1883:1883/tcp",
+            "9001:9001/tcp"
+         ],
+         "volumes": [
+            {
+               "container": "/mosquitto/config",
+               "bind": "/portainer/Files/AppData/Config/Mosquitto/config"
+            },
+            {
+               "container": "/mosquitto/data",
+               "bind": "/portainer/Files/AppData/Config/Mosquitto/data"
+            },
+            {
+               "container": "/mosquitto/log",
+               "bind": "/portainer/Files/AppData/Config/Mosquitto/log"
+            }
+         ],
+         "restart_policy": "unless-stopped",
+         "note": "Default MQTT port is 1883, WebSocket port is 9001. You'll need to create a mosquitto.conf file in the config directory. For authentication, use mosquitto_passwd to create a password file."
+      },
+      {
          "id": 24,
          "type": 1,
          "name": "n8n",
